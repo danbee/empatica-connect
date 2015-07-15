@@ -1,0 +1,34 @@
+{
+  "name": "empatica-connect",
+  "version": "0.0.0",
+  "description": "Get the latest session from Empatica Connect.",
+  "license": "MIT",
+  "repository": "danbee/empatica-connect",
+  "author": {
+    "name": "Dan Barber",
+    "email": "github@danbarber.me",
+    "url": "danbarber.me"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli"
+  ],
+  "dependencies": {
+    "meow": "^3.3.0",
+    "request": "^2.58.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
