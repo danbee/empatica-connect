@@ -30,7 +30,8 @@ var empaticaConnect = {
         var requestUrl = 'https://www.empatica.com/connect/connect.php/users/'+userId+'/sessions?from='+startTime+'&to='+endTime;
         request.get(requestUrl, function (error, response, body) {
           var processedSessions = empaticaUtils.processSessions(JSON.parse(body), bandId);
-          success(processedSessions);
+          var session = processedSessions.slice(-1)[0];
+          success(session);
         });
       })
       .on('error', function (response) {
