@@ -14,7 +14,7 @@ var cli = meow({
   ]
 });
 
-empaticaConnect(cli.input[0], function (data) {
+empaticaConnect.getLastSession(cli.input[0], function (data) {
   console.log(data);
 },
 function (data) {
