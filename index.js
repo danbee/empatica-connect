@@ -1,5 +1,6 @@
 'use strict';
 
+var async = require('async');
 var request = require('request');
 var moment = require('moment');
 
@@ -31,7 +32,19 @@ var empaticaConnect = {
         request.get(requestUrl, function (error, response, body) {
           var processedSessions = empaticaUtils.processSessions(JSON.parse(body), bandId);
           var session = processedSessions.slice(-1)[0];
-          success(session);
+
+          session.data = {};
+          var dataUrl = 'https://www.empatica.com/connect/get_csv_proxy.php?id='+session.id+'&file=';
+          var dataTypes = ['eda', 'bvp', 'acc', 'ibi', 'temp'];
+          var dataUrls = dataTypes.map(function (type) { return dataUrl + type; });
+
+          async.map(dataUrls, request.get, function (error, results) {
+            dataTypes.forEach(function (type, index) {
+              session.data[type] = empaticaUtils['process'+type.toUpperCase()](results[index].body);
+            });
+            success(session.data.ibi);
+          });
+
         });
       })
       .on('error', function (response) {

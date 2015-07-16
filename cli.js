@@ -20,3 +20,5 @@ empaticaConnect.getLastSession(cli.input[0], function (data) {
 function (data) {
   console.log(data);
 });
+
+console.log("Waiting...");

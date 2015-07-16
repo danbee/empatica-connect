@@ -25,6 +25,7 @@
     "cli"
   ],
   "dependencies": {
+    "async": "^1.3.0",
     "meow": "^3.3.0",
     "moment": "^2.10.3",
     "request": "^2.58.0"
