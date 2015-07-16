@@ -1,6 +1,6 @@
 # empatica-connect [![Build Status](https://travis-ci.org/danbee/empatica-connect.svg?branch=master)](https://travis-ci.org/danbee/empatica-connect)
 
-> My geometric module
+A node module for fetching data from Empatica Connect.
 
 
 ## Install
@@ -15,53 +15,24 @@ $ npm install --save empatica-connect
 ```js
 var empaticaConnect = require('empatica-connect');
 
-empaticaConnect('unicorns');
-//=> unicorns & rainbows
+empaticaConnect.getLastSession(deviceId, function (data) {
+  // do something with the data
+},
+function (data) {
+  // something went wrong!
+});
 ```
-
-
-## CLI
-
-```
-$ npm install --global empatica-connect
-```
-```
-$ empatica-connect --help
-
-  Usage
-    empatica-connect [input]
-
-  Example
-    empatica-connect
-    unicorns & rainbows
-
-    empatica-connect ponies
-    ponies & rainbows
-
-  Options
-    --foo  Lorem ipsum. Default: false
-```
-
 
 ## API
 
-### empaticaConnect(input, [options])
+### empaticaConnect.getLastSession(deviceId, success, failure)
 
-#### input
+#### deviceId
 
-*Required*  
+*Required*
 Type: `string`
 
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.
+Example: "A00182-E4"
 
 
 ## License
