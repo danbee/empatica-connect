@@ -1,6 +1,6 @@
 {
   "name": "empatica-connect",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Get the latest session from Empatica Connect.",
   "license": "MIT",
   "repository": "danbee/empatica-connect",

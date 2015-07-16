@@ -15,10 +15,10 @@ $ npm install --save empatica-connect
 ```js
 var empaticaConnect = require('empatica-connect');
 
-empaticaConnect.getLastSession(deviceId, function (data) {
-  // do something with the data
+empaticaConnect.getLastSession(deviceId, function (session) {
+  // do something with the session data
 },
-function (data) {
+function (error) {
   // something went wrong!
 });
 ```
