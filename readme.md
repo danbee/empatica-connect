@@ -12,6 +12,16 @@ $ npm install --save empatica-connect
 
 ## Usage
 
+The username and password for the account should be set up as environment
+variables:
+
+```sh
+$ export EMPATICA_USERNAME={username}
+$ export EMPATICA_PASSWORD={password}
+```
+
+`direnv` is a good tool to do this in development.
+
 ```js
 var empaticaConnect = require('empatica-connect');
 
