@@ -130,7 +130,7 @@ var empaticaConnect = {
               dataTypes.forEach(function (type, index) {
                 session.data[type] = empaticaUtils['process'+type.toUpperCase()](results[index].body);
               });
-              success(session.data.ibi);
+              success(session);
             });
           }
           else {
